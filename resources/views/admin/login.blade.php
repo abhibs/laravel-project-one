@@ -35,6 +35,11 @@
     <!-- End layout styles -->
 
     <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.png') }}" />
+    <!-- toastr Css start-->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
+    <!-- toastr Css End-->
 </head>
 
 <body>
@@ -56,16 +61,19 @@
                                         <a href="#"
                                             class="noble-ui-logo logo-light d-block mb-2 text-center">Admin Login</a>
                                         {{-- <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5> --}}
-                                        <form class="forms-sample">
+                                        <form class="forms-sample" action="{{ route('admin-login-post') }}"
+                                            method="POST">
+                                            @csrf
                                             <div class="mb-3">
                                                 <label for="userEmail" class="form-label">Email address</label>
-                                                <input type="email" class="form-control" id="userEmail"
+                                                <input type="email" name="email" class="form-control" id="userEmail"
                                                     placeholder="Email">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="userPassword" class="form-label">Password</label>
-                                                <input type="password" class="form-control" id="userPassword"
-                                                    autocomplete="current-password" placeholder="Password">
+                                                <input type="password" name="password" class="form-control"
+                                                    id="userPassword" autocomplete="current-password"
+                                                    placeholder="Password">
                                             </div>
 
                                             <div class="text-center">
@@ -102,6 +110,29 @@
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
 
+    <!-- toastr js start -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
+    <!-- toastr js end -->
 </body>
 
 </html>
