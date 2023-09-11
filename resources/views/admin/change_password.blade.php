@@ -51,7 +51,7 @@
 
                             <h6 class="card-title">Adminn Change Password </h6>
 
-                            <form method="POST" action="" class="forms-sample">
+                            <form method="POST" action="{{ route('admin-password-update') }}" class="forms-sample">
                                 @csrf
 
 
