@@ -100,4 +100,10 @@ class AdminController extends Controller
         return redirect()->route('admin-profile')->with($notification);
 
     }
+
+    public function changePassword()
+    {
+        $data = Auth::guard('admin')->user();
+        return view('admin.change_password', compact('data'));
+    }
 }
