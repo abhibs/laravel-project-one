@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 
@@ -18,6 +19,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/profile/update', [AdminController::class, 'adminProfileUpdate'])->name('admin-profile-update');
         Route::get('/change/password', [Admincontroller::class, 'changePassword'])->name('admin-change-password');
         Route::post('/update/password', [AdminController::class, 'updatePassword'])->name('admin-password-update');
+
+
+        Route::get('user/profile', [ProfileController::class, 'index'])->name('user-profile');
+        Route::post('user/profile/update', [ProfileController::class, 'update'])->name('user-profile-update');
 
     });
 });

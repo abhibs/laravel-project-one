@@ -112,6 +112,11 @@
         @endif
     </script>
     <!-- toastr js end -->
+
+    <!-- tinymce -->
+    <script src="{{ asset('admin/assets/vendors/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/tinymce.js') }}"></script>
+    <!-- tinymce -->
 </body>
 
 </html>
