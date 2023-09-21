@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client-delete');
         Route::get('/client/inactive/{id}', [ClientController::class, 'inactive'])->name('client-inactive');
         Route::get('/client/active/{id}', [ClientController::class, 'active'])->name('client-active');
+
+
+        Route::get('/about', [AboutController::class, 'index'])->name('about');
+        Route::post('/about/us/content/update', [AboutController::class, 'update'])->name('about-update');
 
     });
 });
