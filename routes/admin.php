@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 
@@ -39,6 +40,15 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/about', [AboutController::class, 'index'])->name('about');
         Route::post('/about/us/content/update', [AboutController::class, 'update'])->name('about-update');
+
+        Route::get('service/create', [ServiceController::class, 'create'])->name('service-create');
+        Route::post('service/store', [ServiceController::class, 'store'])->name('service-store');
+        Route::get('service', [ServiceController::class, 'index'])->name('service');
+        Route::get('service/edit/{id}', [ServiceController::class, 'edit'])->name('service-edit');
+        Route::post('service/update', [ServiceController::class, 'update'])->name('service-update');
+        Route::get('service/delete/{id}', [ServiceController::class, 'delete'])->name('service-delete');
+        Route::get('service/inactive/{id}', [ServiceController::class, 'inactive'])->name('service-inactive');
+        Route::get('service/active/{id}', [ServiceController::class, 'active'])->name('service-active');
 
     });
 });

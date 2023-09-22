@@ -37,7 +37,7 @@
 
                             </div><!-- Row -->
 
-                            <button type="submit" class="btn btn-primary">Add Client </button>
+                            <button type="submit" class="btn btn-primary">Update Client </button>
 
 
                         </form>

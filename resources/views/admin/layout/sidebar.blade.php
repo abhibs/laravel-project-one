@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            Abhiram
+            Noble<span>UI</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -11,61 +11,40 @@
     </div>
     <div class="sidebar-body">
         <ul class="nav">
+            {{-- <li class="nav-item nav-category">Main</li> --}}
             <li class="nav-item">
                 <a href="{{ route('admin-dashboard') }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
-
-            <li class="nav-item active">
-                <a class="nav-link collapsed" data-bs-toggle="collapse" href="#icons" role="button"
-                    aria-expanded="false" aria-controls="icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-smile link-icon">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                    </svg>
+            {{-- <li class="nav-item nav-category">web apps</li> --}}
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false"
+                    aria-controls="emails">
+                    <i class="link-icon" data-feather="mail"></i>
                     <span class="link-title">User Profile</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-chevron-down link-arrow">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
-                <div class="collapse" id="icons" style="">
+                <div class="collapse" id="emails">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="{{ route('user-profile') }}" class="nav-link active">Update User Profile</a>
+                            <a href="{{ route('user-profile') }}" class="nav-link">Update User Profile</a>
                         </li>
 
                     </ul>
                 </div>
             </li>
 
-
+            {{-- <li class="nav-item nav-category">Components</li> --}}
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-toggle="collapse" href="#forms" role="button"
-                    aria-expanded="false" aria-controls="forms">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-inbox link-icon">
-                        <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-                        <path
-                            d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
-                        </path>
-                    </svg>
+                <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false"
+                    aria-controls="uiComponents">
+                    <i class="link-icon" data-feather="feather"></i>
                     <span class="link-title">Clients</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-chevron-down link-arrow">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
-                <div class="collapse" id="forms" style="">
+                <div class="collapse" id="uiComponents">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
                             <a href="{{ route('client-create') }}" class="nav-link">Add Client</a>
@@ -73,17 +52,18 @@
                         <li class="nav-item">
                             <a href="{{ route('client') }}" class="nav-link">All Client</a>
                         </li>
+
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button"
-                    aria-expanded="false" aria-controls="uiComponents">
-                    <i class="link-icon" data-feather="feather"></i>
+                <a class="nav-link" data-bs-toggle="collapse" href="#advancedUI" role="button" aria-expanded="false"
+                    aria-controls="advancedUI">
+                    <i class="link-icon" data-feather="anchor"></i>
                     <span class="link-title">About Us</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
-                <div class="collapse" id="uiComponents">
+                <div class="collapse" id="advancedUI">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
                             <a href="{{ route('about') }}" class="nav-link">Update About Us
@@ -94,6 +74,70 @@
                 </div>
             </li>
 
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button" aria-expanded="false"
+                    aria-controls="general-pages">
+                    <i class="link-icon" data-feather="book"></i>
+                    <span class="link-title">Service</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="general-pages">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('service-create') }}" class="nav-link">Add Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('service') }}" class="nav-link">All Services</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false"
+                    aria-controls="authPages">
+                    <i class="link-icon" data-feather="unlock"></i>
+                    <span class="link-title">Authentication</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="authPages">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="pages/auth/login.html" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/auth/register.html" class="nav-link">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button"
+                    aria-expanded="false" aria-controls="errorPages">
+                    <i class="link-icon" data-feather="cloud-off"></i>
+                    <span class="link-title">Error</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="errorPages">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="pages/error/404.html" class="nav-link">404</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/error/500.html" class="nav-link">500</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item nav-category">Docs</li>
+            <li class="nav-item">
+                <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
+                    <i class="link-icon" data-feather="hash"></i>
+                    <span class="link-title">Documentation</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
