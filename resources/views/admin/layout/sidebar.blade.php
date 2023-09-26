@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            Noble<span>UI</span>
+            Abhiram<span> B S</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -99,16 +99,16 @@
                 <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false"
                     aria-controls="authPages">
                     <i class="link-icon" data-feather="unlock"></i>
-                    <span class="link-title">Authentication</span>
+                    <span class="link-title">Category</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
                 <div class="collapse" id="authPages">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="pages/auth/login.html" class="nav-link">Login</a>
+                            <a href="{{ route('category-create') }}" class="nav-link">Add Category</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/auth/register.html" class="nav-link">Register</a>
+                            <a href="{{ route('category') }}" class="nav-link">All Categories</a>
                         </li>
                     </ul>
                 </div>
