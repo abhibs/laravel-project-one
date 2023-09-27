@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('category-edit');
         Route::post('category/update', [CategoryController::class, 'update'])->name('category-update');
         Route::get('category/delete/{id}', [CategoryController::class, 'delete'])->name('category-delete');
+
+
+        Route::get('portfolio/create', [PortfolioController::class, 'create'])->name('portfolio-create');
+        Route::post('portfolio/store', [PortfolioController::class, 'store'])->name('portfolio-store');
+        Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+        Route::get('portfolio/edit/{id}', [PortfolioController::class, 'edit'])->name('portfolio-edit');
+        Route::post('portfolio/update', [PortfolioController::class, 'update'])->name('portfolio-update');
+        Route::get('portfolio/delete/{id}', [PortfolioController::class, 'delete'])->name('portfolio-delete');
+        Route::get('portfolio/inactive/{id}', [PortfolioController::class, 'inactive'])->name('portfolio-inactive');
+        Route::get('portfolio/active/{id}', [PortfolioController::class, 'active'])->name('portfolio-active');
 
     });
 });

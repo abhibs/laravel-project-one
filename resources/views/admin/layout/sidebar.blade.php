@@ -117,21 +117,20 @@
                 <a class="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button"
                     aria-expanded="false" aria-controls="errorPages">
                     <i class="link-icon" data-feather="cloud-off"></i>
-                    <span class="link-title">Error</span>
+                    <span class="link-title">Portfolio</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
                 <div class="collapse" id="errorPages">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="pages/error/404.html" class="nav-link">404</a>
+                            <a href="{{ route('portfolio-create') }}" class="nav-link">Add Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/error/500.html" class="nav-link">500</a>
+                            <a href="{{ route('portfolio') }}" class="nav-link">All Portfolio</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="nav-item nav-category">Docs</li>
             <li class="nav-item">
                 <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
                     <i class="link-icon" data-feather="hash"></i>
