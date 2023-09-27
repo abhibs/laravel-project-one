@@ -16,6 +16,7 @@ class HomeController extends Controller
         $clients = Client::where('status', 1)->take(6)->latest()->get();
         $aboutdata = About::find(1);
         $services = Service::where('status', 1)->take(4)->latest()->get();
+        
 
         return view('welcome', compact('profiledata', 'clients', 'aboutdata', 'services'));
     }
