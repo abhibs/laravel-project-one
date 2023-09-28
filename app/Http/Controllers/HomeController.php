@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Client;
 use App\Models\Profile;
 use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,8 +17,8 @@ class HomeController extends Controller
         $clients = Client::where('status', 1)->take(6)->latest()->get();
         $aboutdata = About::find(1);
         $services = Service::where('status', 1)->take(4)->latest()->get();
-        
+        $teamdatas = Team::where('status', 1)->get();
 
-        return view('welcome', compact('profiledata', 'clients', 'aboutdata', 'services'));
+        return view('welcome', compact('profiledata', 'clients', 'aboutdata', 'services', 'teamdatas'));
     }
 }
