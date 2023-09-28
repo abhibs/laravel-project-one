@@ -152,6 +152,26 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#faq" role="button" aria-expanded="false"
+                    aria-controls="uiComponents">
+                    <i class="link-icon" data-feather="feather"></i>
+                    <span class="link-title">Faqs</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="faq">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('faq-create') }}" class="nav-link">Add Faq</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('faq') }}" class="nav-link">All Faq</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
         </ul>
     </div>
 </nav>

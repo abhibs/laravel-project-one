@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -79,6 +80,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('team/delete/{id}', [TeamController::class, 'delete'])->name('team-delete');
         Route::get('team/inactive/{id}', [TeamController::class, 'inactive'])->name('team-inactive');
         Route::get('team/active/{id}', [TeamController::class, 'active'])->name('team-active');
+
+
+        Route::get('faq/create', [FaqController::class, 'create'])->name('faq-create');
+        Route::post('faq/store', [FaqController::class, 'store'])->name('faq-store');
+        Route::get('faq', [FaqController::class, 'index'])->name('faq');
+        Route::get('faq/edit/{id}', [FaqController::class, 'edit'])->name('faq-edit');
+        Route::post('faq/update', [FaqController::class, 'update'])->name('faq-update');
+        Route::get('faq/delete/{id}', [FaqController::class, 'delete'])->name('faq-delete');
+        Route::get('faq/inactive/{id}', [FaqController::class, 'inactive'])->name('faq-inactive');
+        Route::get('faq/active/{id}', [FaqController::class, 'active'])->name('faq-active');
 
     });
 });
