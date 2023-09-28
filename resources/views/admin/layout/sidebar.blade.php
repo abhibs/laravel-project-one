@@ -131,12 +131,27 @@
                     </ul>
                 </div>
             </li>
+
             <li class="nav-item">
-                <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
-                    <i class="link-icon" data-feather="hash"></i>
-                    <span class="link-title">Documentation</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#team" role="button" aria-expanded="false"
+                    aria-controls="team">
+                    <i class="link-icon" data-feather="mail"></i>
+                    <span class="link-title">Team</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
+                <div class="collapse" id="team">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('team-create') }}" class="nav-link">Add Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('team') }}" class="nav-link">All Teams</a>
+                        </li>
+
+                    </ul>
+                </div>
             </li>
+
         </ul>
     </div>
 </nav>

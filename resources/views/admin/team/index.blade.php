@@ -3,7 +3,7 @@
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Admin</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Clients Data</li>
+            <li class="breadcrumb-item active" aria-current="page">Team Data</li>
         </ol>
     </nav>
 
@@ -11,14 +11,17 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h6 class="card-title">Client Data</h6>
+                    <h6 class="card-title">Team Data</h6>
 
                     <div class="table-responsive">
                         <table id="dataTableExample" class="table">
                             <thead>
                                 <tr>
                                     <th>Sl</th>
+                                    <th>Name</th>
                                     <th>Image</th>
+                                    <th>Designation</th>
+                                    <th>Content</th>
                                     <th>Status </th>
                                     <th>Action</th>
                                 </tr>
@@ -27,31 +30,32 @@
                                 @foreach ($datas as $key => $item)
                                     <tr>
                                         <td> {{ $key + 1 }} </td>
+                                        <td>{{ $item->name }}</td>
+                                        <td><img src="{{ asset($item->image) }}" style="width: 60px; height: 50px;"></td>
+                                        <td>{{ $item->designation }}</td>
+                                        <td>{{ Str::limit($item->content, 20) }}</td>
                                         <td>
                                             @if ($item->status == 1)
                                                 <span class="badge badge-pill bg-success">Active</span>
                                             @else
                                                 <span class="badge badge-pill bg-danger">InActive</span>
                                             @endif
-
-
                                         </td>
                                         <td>
-                                            <a href="{{ route('client-edit', $item->id) }}" class="btn btn-outline-warning"
+                                            <a href="{{ route('team-edit', $item->id) }}" class="btn btn-outline-warning"
                                                 title="Edit Data"> Edit </a>
 
-                                            <a href="{{ route('client-delete', $item->id) }}" class="btn btn-outline-danger"
+                                            <a href="{{ route('team-delete', $item->id) }}" class="btn btn-outline-danger"
                                                 title="Delete Data" id="delete"> Delete
                                             </a>
 
                                             @if ($item->status == 1)
-                                                <a href="{{ route('client-inactive', $item->id) }}"
+                                                <a href="{{ route('team-inactive', $item->id) }}"
                                                     class="btn btn-outline-info" title="Inactive"><i
                                                         class="fa-solid fa-thumbs-down"></i> </a>
                                             @else
-                                                <a href="{{ route('client-active', $item->id) }}"
-                                                    class="btn btn-outline-info" title="Active"><i
-                                                        class="fa-solid fa-thumbs-up"></i></a>
+                                                <a href="{{ route('team-active', $item->id) }}" class="btn btn-outline-info"
+                                                    title="Active"><i class="fa-solid fa-thumbs-up"></i></a>
                                             @endif
 
                                         </td>

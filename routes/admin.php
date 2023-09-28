@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 
@@ -69,6 +70,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('portfolio/delete/{id}', [PortfolioController::class, 'delete'])->name('portfolio-delete');
         Route::get('portfolio/inactive/{id}', [PortfolioController::class, 'inactive'])->name('portfolio-inactive');
         Route::get('portfolio/active/{id}', [PortfolioController::class, 'active'])->name('portfolio-active');
+
+        Route::get('team/create', [TeamController::class, 'create'])->name('team-create');
+        Route::post('team/store', [TeamController::class, 'store'])->name('team-store');
+        Route::get('team', [TeamController::class, 'index'])->name('team');
+        Route::get('team/edit/{id}', [TeamController::class, 'edit'])->name('team-edit');
+        Route::post('team/update/{id}', [TeamController::class, 'update'])->name('team-update');
+        Route::get('team/delete/{id}', [TeamController::class, 'delete'])->name('team-delete');
+        Route::get('team/inactive/{id}', [TeamController::class, 'inactive'])->name('team-inactive');
+        Route::get('team/active/{id}', [TeamController::class, 'active'])->name('team-active');
 
     });
 });
