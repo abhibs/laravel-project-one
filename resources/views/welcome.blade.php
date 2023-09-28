@@ -307,33 +307,49 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="{{ route('contact-store') }}" method="post"
+                            style="  width: 100%;
+  border-top: 3px solid #47b2e4;
+  border-bottom: 3px solid #47b2e4;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);">
+                            @csrf
+
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        required>
+                                <div class="form-group col-md-6" style="padding-bottom: 8px;margin-bottom: 20px;">
+                                    <label for="name" style="padding-bottom: 8px;">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name">
+                                    @error('name')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="name">Your Email</label>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        required>
+                                    <label for="name" style="padding-bottom: 8px;">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email">
+                                    @error('email')
+                                        <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject" required>
+                                <label for="name" style="padding-bottom: 8px;">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject">
+                                @error('subject')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name">Message</label>
-                                <textarea class="form-control" name="message" rows="10" required></textarea>
+                                <label for="name" style="padding-bottom: 8px;">Message</label>
+                                <textarea class="form-control" name="message" rows="10"></textarea>
+                                @error('message')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                @enderror
                             </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                            <div class="text-center mt-2">
+                                <button class="btn btn-info px-5 py-3" type="submit">Send Message</button>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
                         </form>
                     </div>
 
