@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -90,6 +91,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('faq/delete/{id}', [FaqController::class, 'delete'])->name('faq-delete');
         Route::get('faq/inactive/{id}', [FaqController::class, 'inactive'])->name('faq-inactive');
         Route::get('faq/active/{id}', [FaqController::class, 'active'])->name('faq-active');
+
+
+        Route::get('user/contact', [ContactController::class, 'index'])->name('user-contact');
+        Route::get('user/contact/{id}', [ContactController::class, 'delete'])->name('user-contact-delete');
 
     });
 });

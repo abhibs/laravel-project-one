@@ -172,6 +172,24 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#contact" role="button" aria-expanded="false"
+                    aria-controls="general-pages">
+                    <i class="link-icon" data-feather="book"></i>
+                    <span class="link-title">Contact Us</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="contact">
+                    <ul class="nav sub-menu">
+
+                        <li class="nav-item">
+                            <a href="{{ route('user-contact') }}" class="nav-link">All User Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
         </ul>
     </div>
 </nav>
